@@ -432,4 +432,52 @@ footer {
     .footer-links {
         margin-bottom: 20px;
     }
+
+}
+
+/* ===== MOBİL DÜZELTMELERİ ===== */
+
+/* Mobil menüdeki yeni "Hemen Randevu Al" butonunu stillendir */
+.mobile-menu .mobile-cta-item {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.mobile-menu .mobile-cta-button {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    padding: 12px 25px;
+    border-radius: 5px;
+    display: inline-block;
+    font-family: var(--heading-font);
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-menu .mobile-cta-button:hover {
+    background-color: var(--primary-color);
+}
+
+/* Mobil cihazlarda (768px altı) geçerli olacak düzeltmeler */
+@media (max-width: 768px) {
+
+    /* Hero butonlarının (Tedaviler/Bize Ulaşın) üst üste binmesini engelle */
+    .hero-buttons {
+        display: flex;
+        flex-direction: column; /* Butonları alt alta sırala */
+        align-items: center;   /* Ortala */
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 80%; /* Buton genişliğini ayarla */
+        margin: 10px 0; /* Butonlar arasına dikey boşluk ver */
+        text-align: center;
+    }
+
+    /* Masaüstü randevu butonunu mobilde gizle (bu kural zaten vardı ama emin olmak için) */
+    .cta-button {
+        display: none;
+    }
 }
