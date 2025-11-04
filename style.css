@@ -152,11 +152,12 @@ header {
 /* ===== HERO (KARŞILAMA EKRANI) ===== */
 #hero {
     height: 90vh;
-    background: url('https://via.placeholder.com/1920x1080.png?text=Klinik+Görseli') no-repeat center center/cover;
+    /* background: ... satırı silindi */
     position: relative;
     display: flex;
     align-items: center;
     color: var(--white-color);
+    overflow: hidden; /* Dışarı taşan slide'ları gizlemek için eklendi */
 }
 
 .hero-overlay {
@@ -481,3 +482,4 @@ footer {
         display: none;
     }
 }
+
