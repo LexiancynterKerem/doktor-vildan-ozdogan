@@ -483,3 +483,86 @@ footer {
     }
 }
 
+/* ===== HERO SLIDER STİLLERİ ===== */
+.slider-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* En alttaki katman */
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Başlangıçta tüm slide'lar gizli */
+    transition: opacity 1s ease-in-out; /* Yumuşak geçiş efekti */
+    z-index: 1;
+}
+
+.slide.active {
+    opacity: 1; /* Sadece aktif olan slide görünür */
+    z-index: 2;
+}
+
+/* z-index (katman) sıralaması:
+   slide'lar z-index 1 ve 2
+   overlay z-index 3
+   yazılar z-index 4
+   oklar z-index 5
+*/
+.hero-overlay {
+    z-index: 3; 
+}
+.hero-content {
+    z-index: 4; 
+}
+
+/* Kaydırma Okları */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5; /* En üstte */
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.slider-arrow.prev {
+    left: 20px;
+}
+
+.slider-arrow.next {
+    right: 20px;
+}
+
+/* Mobil cihazlar için okları küçült */
+@media (max-width: 768px) {
+    .slider-arrow {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+    .slider-arrow.prev {
+        left: 10px;
+    }
+    .slider-arrow.next {
+        right: 10px;
+    }
+}
+
+
